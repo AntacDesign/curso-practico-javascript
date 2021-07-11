@@ -61,7 +61,7 @@ function calcularAreaCuadrado(lado = inputCuadrado.valueAsNumber){
     (area == 0 || isNaN(area)) ?
     resCuadrado.innerHTML=`Ingresa un dato mayor a 0`
     : 
-    resCuadrado.innerHTML=`El área del cuadado es <strong>${area} cm</strong>`
+    resCuadrado.innerHTML=`El área del cuadado es <strong>${area} cm<sup>2</sup></strong>`
     ;
 }
 
@@ -71,12 +71,14 @@ const inputTrianguloLado1 = document.getElementById('inputTrianguloLado1');
 const inputTrianguloLado2 = document.getElementById('inputTrianguloLado2');
 const inputTrianguloBase = document.getElementById('inputTrianguloBase');
 
-inputTrianguloLado1.addEventListener('focusin',()=>
-{
+
+let trianguloIsoseles = document.getElementById('sec_triangulo');
+
+trianguloIsoseles.addEventListener('focusin',()=>{ 
     resTriangulo.innerHTML=``;
     if(inputTrianguloLado1.value == 0 || isNaN(inputTrianguloLado1.value)){
         inputTrianguloLado1.value = '1';
-    };
+    }
     if(inputTrianguloLado2.value == 0 || isNaN(inputTrianguloLado2.value)){
         inputTrianguloLado2.value = '1';
     }
@@ -84,31 +86,11 @@ inputTrianguloLado1.addEventListener('focusin',()=>
         inputTrianguloBase.value = '1';
     }
 });
-inputTrianguloLado2.addEventListener('focusin',()=>
-{
-    resTriangulo.innerHTML=``;
-    if(inputTrianguloLado1.value == 0 || isNaN(inputTrianguloLado1.value)){
-        inputTrianguloLado1.value = '1';
-    };
-    if(inputTrianguloLado2.value == 0 || isNaN(inputTrianguloLado2.value)){
-        inputTrianguloLado2.value = '1';
-    }
-    if(inputTrianguloBase.value == 0 || isNaN(inputTrianguloBase.value)){
-        inputTrianguloBase.value = '1';
-    }
-});
-inputTrianguloBase.addEventListener('focusin',()=>
-{
-    resTriangulo.innerHTML=``;
-    if(inputTrianguloLado1.value == 0 || isNaN(inputTrianguloLado1.value)){
-        inputTrianguloLado1.value = '1';
-    };
-    if(inputTrianguloLado2.value == 0 || isNaN(inputTrianguloLado2.value)){
-        inputTrianguloLado2.value = '1';
-    }
-    if(inputTrianguloBase.value == 0 || isNaN(inputTrianguloBase.value)){
-        inputTrianguloBase.value = '1';
-    }
+
+trianguloIsoseles.addEventListener('input',()=>{
+    (inputTrianguloLado1.value == inputTrianguloLado2.value)?
+        console.log('Es isoseles')
+    :'';
 });
 
 function calcularPerimetroTriangulo(lado1 = inputTrianguloLado1.valueAsNumber,lado2 = inputTrianguloLado2.valueAsNumber,base = inputTrianguloBase.valueAsNumber){
@@ -124,7 +106,7 @@ function calcularAreaTriangulo(base = inputTrianguloBase.valueAsNumber, altura =
     (area == 0 || isNaN(area)) ?
     resTriangulo.innerHTML=`Ingresa un dato mayor a 0`
     : 
-    resTriangulo.innerHTML=`El área del triangulo es <strong>${area} cm</strong>`
+    resTriangulo.innerHTML=`El área del triangulo es <strong>${area} cm<sup>2</sup></strong>`
     ;
 }
 
@@ -150,7 +132,7 @@ function calcularDiametroCirculo(radio = inputCirculo.valueAsNumber){
     ;
 }
 function calcularCircunferenciaCirculo(radio = inputCirculo.valueAsNumber){
-    const circunferencia = circunferenciaCirculo(radio);
+    const circunferencia = circunferenciaCirculo(radio).toFixed(2);
     (circunferencia == 0 || isNaN(circunferencia)) ?
     resCirculo.innerHTML=`Ingresa un dato mayor a 0`
     : 
@@ -158,10 +140,10 @@ function calcularCircunferenciaCirculo(radio = inputCirculo.valueAsNumber){
     ;
 }
 function calcularAreaCirculo(radio = inputCirculo.valueAsNumber){
-    const area = areaCirculo(radio);
+    const area = areaCirculo(radio).toFixed(2);
     (area == 0 || isNaN(area)) ?
     resCirculo.innerHTML=`Ingresa un dato mayor a 0`
     : 
-    resCirculo.innerHTML=`El área del circulo es <strong>${area} cm</strong>`
+    resCirculo.innerHTML=`El área del circulo es <strong>${area} cm<sup>2</sup></strong>`
     ;
 }
