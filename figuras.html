@@ -30,16 +30,18 @@
             <div class="cuadradoLado4"></div>
           </div>
         </div>
-        <form action="">
+        <form class="container container__formulario" action="">
           <div class="label-flotante">
             <input type="number" min="1" required id="inputCuadrado" />
             <label for="inputCuadrado"> Lados </label>
           </div>
-          <h3>Calcular</h3>
-          <button type="button" onclick="calcularPerimetroCuadrado()">
-            Perímetro
-          </button>
-          <button type="button" onclick="calcularAreaCuadrado()">Área</button>
+          <div class="container__formulario--cuadrado_sec_operaciones">
+            <h3>Calcular</h3>
+            <button type="button" onclick="calcularPerimetroCuadrado()">
+              Perímetro
+            </button>
+            <button type="button" onclick="calcularAreaCuadrado()">Área</button>
+          </div>
         </form>
         <div id="output--cuadrado"></div>
       </section>

@@ -19,7 +19,7 @@ body{
 
 header{
     color: var(--color-principal);
-    padding: .3rem 1rem;
+    padding: .3rem .55rem;
     display: flex;  
     align-items: center;
     gap: 1rem;
@@ -173,6 +173,7 @@ button:hover{
     position: absolute;
     font-weight: 500;
     user-select: none;
+    transition: .1s ease-in-out;
 }
 
 .cuadradoLado1{

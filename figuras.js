@@ -40,11 +40,10 @@ const resCuadrado = document.getElementById('output--cuadrado');
 const inputCuadrado = document.getElementById('inputCuadrado');
 
 const ladosCuadrado = document.querySelectorAll('div[class^=cuadradoLado]');
-
 const lado3Cuadrado = document.getElementsByClassName('cuadradoLado3')[0];
 const lado4Cuadrado = document.getElementsByClassName('cuadradoLado4')[0];
 
-inputCuadrado.addEventListener('keyup',()=>{
+inputCuadrado.addEventListener('input',()=>{
     if(inputCuadrado.value > 9) {
     lado3Cuadrado.style.right = '-3rem';
     lado4Cuadrado.style.left = '-3rem';
@@ -58,10 +57,18 @@ inputCuadrado.addEventListener('keyup',()=>{
         lado3Cuadrado.style.right = '-2.5rem';
         lado4Cuadrado.style.left = '-2.5rem';
     }
-    ladosCuadrado.forEach(item=>{
-        item.innerHTML=''
-        item.innerHTML=inputCuadrado.value + 'cm'
-    })
+    
+    if (inputCuadrado.value <= 0){
+        inputCuadrado.value = '';
+        ladosCuadrado.forEach(item=>{
+            item.innerHTML=''
+        })
+    }else{
+        ladosCuadrado.forEach(item=>{
+            item.innerHTML=''
+            item.innerHTML=inputCuadrado.value + 'cm'
+        })
+    }
 })
 
 
