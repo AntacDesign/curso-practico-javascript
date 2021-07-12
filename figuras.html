@@ -4,69 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Figuras geométrica | Curso Practico de JS</title>
   </head>
   <body>
     <header>
-      <!-- <img src="https://media.giphy.com/media/1Af76VWLHB1H8LyDEq/source.gif" alt="">
-      <img src="https://media.giphy.com/media/7WrjgQ21tan8cuyxMX/source.gif" alt=""> 
+      <img
+        src="https://media.giphy.com/media/1Af76VWLHB1H8LyDEq/source.gif"
+        height="80px"
+        alt=""
+      />
+      <!-- <img src="https://media.giphy.com/media/7WrjgQ21tan8cuyxMX/source.gif" alt=""> 
       <img src="https://media.giphy.com/media/1zKw7WTALJONG2OGgK/source.gif" alt="">
     -->
       <h1>Figuras geométricas</h1>
-      <p>Este es el primer taller del curso práctico de un cuadrado</p>
     </header>
     <div class="container container--calculos">
       <section id="sec_cuadrado">
-        <h2>
-          Cuadrado
-        </h2>
+        <h2><strong>▢</strong>  Cuadrado</h2>
         <div class="figura">
-          <div id="cuadrado"></div>
+          <div id="cuadrado">
+            <div class="cuadradoLado1"></div>
+            <div class="cuadradoLado2"></div>
+            <div class="cuadradoLado3"></div>
+            <div class="cuadradoLado4"></div>
+          </div>
         </div>
         <form action="">
           <div class="label-flotante">
-            <label for="inputCuadrado">
-              Lados
-            </label>
-            <input type="number" min="1" id="inputCuadrado">
+            <input type="number" min="1" required id="inputCuadrado" />
+            <label for="inputCuadrado"> Lados </label>
           </div>
+          <h3>Calcular</h3>
           <button type="button" onclick="calcularPerimetroCuadrado()">
             Perímetro
           </button>
-          <button type="button" onclick="calcularAreaCuadrado()">
-            Área
-          </button>
+          <button type="button" onclick="calcularAreaCuadrado()">Área</button>
         </form>
         <div id="output--cuadrado"></div>
       </section>
       <section id="sec_triangulo">
-        <h2>
-          Triangulo
-        </h2>
+        <h2><strong>△</strong>Triangulo</h2>
         <div class="figura">
           <div id="triangulo"></div>
         </div>
         <form action="">
           <div class="label-flotante">
-            <label for="inputTrianguloLado1">
-              Lado 1
-            </label>
-            <input type="number" min="1"  id="inputTrianguloLado1">
+            <input required type="number" min="1" id="inputTrianguloLado1" />
+            <label for="inputTrianguloLado1"> Lado 1 </label>
           </div>
           <div class="label-flotante">
+            <input required type="number" min="1" id="inputTrianguloLado2" />
             <label for="inputTrianguloLado2">Lado 2</label>
-            <input type="number" min="1"  id="inputTrianguloLado2">
           </div>
           <div class="label-flotante">
+            <input required type="number" min="1" id="inputTrianguloBase" />
             <label for="inputTrianguloBase">Base</label>
-            <input type="number" min="1"  id="inputTrianguloBase">
           </div>
           <button type="button" onclick="calcularPerimetroTriangulo()">
             Perímetro
           </button>
-          <button type="button" onclick="calcularAreaTriangulo()">
-            Área
-          </button>
+          <button type="button" onclick="calcularAreaTriangulo()">Área</button>
           <button type="button" onclick="calcularAlturaTriangulo()">
             Altura
           </button>
@@ -74,26 +72,22 @@
         <div id="output--triangulo"></div>
       </section>
       <section id="sec_circulo">
-        <h2>
-          Circulo
-        </h2>
+        <h2><strong>○</strong>Circulo</h2>
         <div class="figura">
           <div id="circulo"></div>
         </div>
         <form action="">
-          <label for="inputCirculo">
-            Radio
-          </label>
-          <input type="number" min="1"  id="inputCirculo">
+          <div class="label-flotante">
+            <input required type="number" min="1" id="inputCirculo" />
+            <label for="inputCirculo"> Radio </label>
+          </div>
           <button type="button" onclick="calcularDiametroCirculo()">
             Diametro
           </button>
           <button type="button" onclick="calcularCircunferenciaCirculo()">
             Circunferencia
           </button>
-          <button type="button" onclick="calcularAreaCirculo()">
-            Área
-          </button>
+          <button type="button" onclick="calcularAreaCirculo()">Área</button>
         </form>
         <div id="output--circulo"></div>
       </section>

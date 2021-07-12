@@ -39,14 +39,31 @@ console.groupEnd();
 const resCuadrado = document.getElementById('output--cuadrado');
 const inputCuadrado = document.getElementById('inputCuadrado');
 
-inputCuadrado.addEventListener('focusin',()=>
-{
-    resCuadrado.innerHTML=``;
-    if(inputCuadrado.value == 0 || isNaN(inputCuadrado.value))
-    {
-        inputCuadrado.value = '1'
-    };
-});
+const ladosCuadrado = document.querySelectorAll('div[class^=cuadradoLado]');
+
+const lado3Cuadrado = document.getElementsByClassName('cuadradoLado3')[0];
+const lado4Cuadrado = document.getElementsByClassName('cuadradoLado4')[0];
+
+inputCuadrado.addEventListener('keyup',()=>{
+    if(inputCuadrado.value > 9) {
+    lado3Cuadrado.style.right = '-3rem';
+    lado4Cuadrado.style.left = '-3rem';
+    console.log('funciona')
+    }
+    if (inputCuadrado.value > 99){
+        lado3Cuadrado.style.right = '-4rem';
+        lado4Cuadrado.style.left = '-4rem';
+    } 
+    if (inputCuadrado.value <= 9){
+        lado3Cuadrado.style.right = '-2.5rem';
+        lado4Cuadrado.style.left = '-2.5rem';
+    }
+    ladosCuadrado.forEach(item=>{
+        item.innerHTML=''
+        item.innerHTML=inputCuadrado.value + 'cm'
+    })
+})
+
 
 function calcularPerimetroCuadrado(lado = inputCuadrado.valueAsNumber){
     const perimetro = perimetroCuadrado(lado);
@@ -74,18 +91,6 @@ const inputTrianguloBase = document.getElementById('inputTrianguloBase');
 
 let trianguloIsoseles = document.getElementById('sec_triangulo');
 
-trianguloIsoseles.addEventListener('focusin',()=>{ 
-    resTriangulo.innerHTML=``;
-    if(inputTrianguloLado1.value == 0 || isNaN(inputTrianguloLado1.value)){
-        inputTrianguloLado1.value = '1';
-    }
-    if(inputTrianguloLado2.value == 0 || isNaN(inputTrianguloLado2.value)){
-        inputTrianguloLado2.value = '1';
-    }
-    if(inputTrianguloBase.value == 0 || isNaN(inputTrianguloBase.value)){
-        inputTrianguloBase.value = '1';
-    }
-});
 
 trianguloIsoseles.addEventListener('input',()=>{
     (inputTrianguloLado1.value == inputTrianguloLado2.value)?
@@ -114,14 +119,6 @@ function calcularAreaTriangulo(base = inputTrianguloBase.valueAsNumber, altura =
 const resCirculo = document.getElementById('output--circulo');
 const inputCirculo = document.getElementById('inputCirculo');
 
-inputCirculo.addEventListener('focusin',()=>
-{
-    resCirculo.innerHTML=``;
-    if(inputCirculo.value == 0 || isNaN(inputCirculo.value))
-    {
-        inputCirculo.value = '1'
-    };
-});
 
 function calcularDiametroCirculo(radio = inputCirculo.valueAsNumber){
     const diametro = diametroCirculo(radio);
