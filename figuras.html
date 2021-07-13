@@ -31,16 +31,34 @@
           </div>
         </div>
         <form class="container container__formulario" action="">
-          <div class="label-flotante">
-            <input type="number" min="1" required id="inputCuadrado" />
-            <label for="inputCuadrado"> Lados </label>
+          <div class="p-relative">
+            <div class="label-flotante">
+              <input type="number" min="1" required id="inputCuadrado" />
+              <label for="inputCuadrado"> Lados </label>
+            </div>
+            <select name="medida" id="medidaCuadrado">
+              <option value="mm">
+                mm
+              </option>
+              <option value="cm">
+                cm
+              </option>
+              <option value="m">
+                m
+              </option>
+              <option value="km">
+                km
+              </option>
+            </select>
           </div>
           <div class="container__formulario--cuadrado_sec_operaciones">
             <h3>Calcular</h3>
-            <button type="button" onclick="calcularPerimetroCuadrado()">
-              Perímetro
-            </button>
-            <button type="button" onclick="calcularAreaCuadrado()">Área</button>
+            <div class="group-btn">
+              <button type="button" onclick="calcularPerimetroCuadrado()">
+                Perímetro
+              </button>
+              <button type="button" onclick="calcularAreaCuadrado()">Área</button>
+            </div>
           </div>
         </form>
         <div id="output--cuadrado"></div>
