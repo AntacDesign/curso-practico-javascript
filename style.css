@@ -141,19 +141,21 @@ input:focus,select:focus{
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
 }
 
-select{
+.select{
     height: min-content;
     border: none;
     border-radius: 4px;
-    position: relative;
     padding: .4rem;
     font-size: 1rem;
+    background: rgba(255, 255, 255);
+    position: relative;
+    cursor: pointer;
+}
+.select--flotante{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: .2rem;
-    cursor: pointer;
-    background: rgba(255, 255, 255);
 }
 
 .label-flotante  label{
@@ -172,6 +174,14 @@ select{
     padding-left: .5rem;
     font-size: 12px;
     font-weight: 600;
+}
+
+/* outputs */
+[id^=output--]:not(:empty){
+    background: #2c2e43e1;
+    color: white;
+    border-radius: 8px;
+    padding: .5rem;
 }
 
 /* BOTONES */

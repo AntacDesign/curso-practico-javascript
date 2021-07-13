@@ -38,26 +38,43 @@ console.groupEnd();
 //Operaciones del cuadrado
 const resCuadrado = document.getElementById('output--cuadrado');
 const inputCuadrado = document.getElementById('inputCuadrado');
+let medidaCuadrado = document.getElementById('medidaCuadrado');
 
 const ladosCuadrado = document.querySelectorAll('div[class^=cuadradoLado]');
 const lado3Cuadrado = document.getElementsByClassName('cuadradoLado3')[0];
 const lado4Cuadrado = document.getElementsByClassName('cuadradoLado4')[0];
 
 inputCuadrado.addEventListener('input',()=>{
+//lados adaptables al tamaño de digitos 
     if(inputCuadrado.value > 9) {
-    lado3Cuadrado.style.right = '-3rem';
-    lado4Cuadrado.style.left = '-3rem';
-    console.log('funciona')
+    lado3Cuadrado.style.right = '-3.5rem';
+    lado4Cuadrado.style.left = '-3.5rem';
     }
     if (inputCuadrado.value > 99){
-        lado3Cuadrado.style.right = '-4rem';
-        lado4Cuadrado.style.left = '-4rem';
+        lado3Cuadrado.style.right = '-4.5rem';
+        lado4Cuadrado.style.left = '-4.5rem';
     } 
     if (inputCuadrado.value <= 9){
-        lado3Cuadrado.style.right = '-2.5rem';
-        lado4Cuadrado.style.left = '-2.5rem';
+        lado3Cuadrado.style.right = '-3rem';
+        lado4Cuadrado.style.left = '-3rem';
     }
-    
+
+//respuesta
+    if (inputCuadrado.value <= 0){
+        inputCuadrado.value = '';
+        ladosCuadrado.forEach(item=>{
+            item.innerHTML=''
+            resCuadrado.innerHTML=''
+        })
+    }else{
+        ladosCuadrado.forEach(item=>{
+            item.innerHTML=''
+            item.innerHTML=`${inputCuadrado.value} ${medidaCuadrado.value}`
+        })
+    }
+})
+
+medidaCuadrado.addEventListener('input',()=>{
     if (inputCuadrado.value <= 0){
         inputCuadrado.value = '';
         ladosCuadrado.forEach(item=>{
@@ -66,7 +83,7 @@ inputCuadrado.addEventListener('input',()=>{
     }else{
         ladosCuadrado.forEach(item=>{
             item.innerHTML=''
-            item.innerHTML=inputCuadrado.value + 'cm'
+            item.innerHTML=`${inputCuadrado.value} ${medidaCuadrado.value}`
         })
     }
 })
