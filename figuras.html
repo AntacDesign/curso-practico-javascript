@@ -32,10 +32,10 @@
         </div>
         <form class="container container__formulario" action="">
           <h4>¿Cuánto miden los lados de tu cuadrado?</h4>
-          <div class="p-relative">
+          <div class="group-input">
             <div class="label-flotante">
               <input type="number" min="1" required id="inputCuadrado" />
-              <label for="inputCuadrado"> Lados </label>
+              <label for="inputCuadrado">Longitud</label>
             </div>
             <select name="medida" id="medidaCuadrado" class="select select--flotante">
               <optgroup label="Medida">
@@ -54,7 +54,7 @@
               </optgroup>
             </select>
           </div>
-          <div class="container__formulario--cuadrado_sec_operaciones">
+          <div class="container__formulario__sec_operaciones">
             <h3>Calcular</h3>
             <div class="group-btn">
               <button type="button" onclick="calcularPerimetroCuadrado()">
@@ -70,29 +70,54 @@
         <h2><strong>△</strong>Triangulo</h2>
         <div class="figura">
           <div id="triangulo">
-            <svg id="triangulo-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"><g fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 5a1 1 0 0 1 .894.553l18 36A1 1 0 0 1 42 43H6a1 1 0 0 1-.894-1.447l18-36A1 1 0 0 1 24 5zm0 3.236L7.618 41h32.764L24 8.236z" fill="#626262"/></g><rect x="0" y="0" width="48" height="48" fill="rgba(0, 0, 0, 0)" /></svg>
+            <img src="./Polygon 1.svg" alt="">
           </div>
         </div>
-        <form action="">
-          <div class="label-flotante">
-            <input required type="number" min="1" id="inputTrianguloLado1" />
-            <label for="inputTrianguloLado1"> Lado 1 </label>
+        <form class="container container__formulario" action="">
+          <h4>Ingresa los datos del triangulo
+            <select name="medida" id="medidaTriangulo" class="select">
+              <optgroup label="Medida">
+                <option value="mm">
+                  mm
+                </option>
+                <option value="cm">
+                  cm
+                </option>
+                <option value="m">
+                  m
+                </option>
+                <option value="km">
+                  km
+                </option>
+              </optgroup>
+            </select>
+          </h4>
+          <div class="group-input group-input--triangulo">
+            <div class="label-flotante">
+              <input required type="number" min="1" id="inputTrianguloLado1" />
+              <label for="inputTrianguloLado1"> Lado 1 </label>
+            </div>
+            <div class="label-flotante">
+              <input required type="number" min="1" id="inputTrianguloLado2" />
+              <label for="inputTrianguloLado2">Lado 2</label>
+            </div>
+            <div class="label-flotante">
+              <input required type="number" min="1" id="inputTrianguloBase" />
+              <label for="inputTrianguloBase">Base</label>
+            </div>
           </div>
-          <div class="label-flotante">
-            <input required type="number" min="1" id="inputTrianguloLado2" />
-            <label for="inputTrianguloLado2">Lado 2</label>
+          <div class="container__formulario__sec_operaciones">
+            <h3>Calcular</h3>
+            <div class="group-btn">
+              <button type="button" onclick="calcularPerimetroTriangulo()">
+                Perímetro
+              </button>
+              <button type="button" onclick="calcularAreaTriangulo()">Área</button>
+              <button type="button" onclick="calcularAlturaTriangulo()">
+                Altura
+              </button>
+            </div>
           </div>
-          <div class="label-flotante">
-            <input required type="number" min="1" id="inputTrianguloBase" />
-            <label for="inputTrianguloBase">Base</label>
-          </div>
-          <button type="button" onclick="calcularPerimetroTriangulo()">
-            Perímetro
-          </button>
-          <button type="button" onclick="calcularAreaTriangulo()">Área</button>
-          <button type="button" onclick="calcularAlturaTriangulo()">
-            Altura
-          </button>
         </form>
         <div id="output--triangulo"></div>
       </section>
@@ -101,12 +126,31 @@
         <div class="figura">
           <div id="circulo"></div>
         </div>
-        <form action="">
+        <form class="container container__formulario" action="">
+          <h4>Ingresa el radio</h4>
+          <div class="group-input">
           <div class="label-flotante">
             <input required type="number" min="1" id="inputCirculo" />
             <label for="inputCirculo"> Radio </label>
           </div>
-          <div class="container__formulario--cuadrado_sec_operaciones">
+          <select name="medida" id="medidaCirculo" class="select select--flotante">
+            <optgroup label="Medida">
+              <option value="mm">
+                mm
+              </option>
+              <option value="cm">
+                cm
+              </option>
+              <option value="m">
+                m
+              </option>
+              <option value="km">
+                km
+              </option>
+            </optgroup>
+          </select>
+          </div>
+          <div class="container__formulario__sec_operaciones">
             <h3>Calcular</h3>
             <div class="group-btn">
               <button type="button" onclick="calcularDiametroCirculo()">
