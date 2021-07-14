@@ -69,7 +69,9 @@
       <section id="sec_triangulo">
         <h2><strong>△</strong>Triangulo</h2>
         <div class="figura">
-          <div id="triangulo"></div>
+          <div id="triangulo">
+            <svg id="triangulo-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"><g fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 5a1 1 0 0 1 .894.553l18 36A1 1 0 0 1 42 43H6a1 1 0 0 1-.894-1.447l18-36A1 1 0 0 1 24 5zm0 3.236L7.618 41h32.764L24 8.236z" fill="#626262"/></g><rect x="0" y="0" width="48" height="48" fill="rgba(0, 0, 0, 0)" /></svg>
+          </div>
         </div>
         <form action="">
           <div class="label-flotante">
@@ -104,13 +106,18 @@
             <input required type="number" min="1" id="inputCirculo" />
             <label for="inputCirculo"> Radio </label>
           </div>
-          <button type="button" onclick="calcularDiametroCirculo()">
-            Diametro
-          </button>
-          <button type="button" onclick="calcularCircunferenciaCirculo()">
-            Circunferencia
-          </button>
-          <button type="button" onclick="calcularAreaCirculo()">Área</button>
+          <div class="container__formulario--cuadrado_sec_operaciones">
+            <h3>Calcular</h3>
+            <div class="group-btn">
+              <button type="button" onclick="calcularDiametroCirculo()">
+                Diametro
+              </button>
+              <button type="button" onclick="calcularCircunferenciaCirculo()">
+                Circunferencia
+              </button>
+              <button type="button" onclick="calcularAreaCirculo()">Área</button>
+            </div>
+          </div>
         </form>
         <div id="output--circulo"></div>
       </section>

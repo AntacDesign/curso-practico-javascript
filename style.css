@@ -1,5 +1,10 @@
 :root{
     --color-amarillo: #FFD523;
+    --color-amarillo-shadow: #FFD52365;
+    --color-cyan: #7DEDFF;
+    --color-cyan-shadow: #7DEDFF65;
+    --color-violeta: #C490E4;
+    --color-violeta-shadow: #C490E465;
     --color-amarillo--claro: #ffe675;
     --color-principal: #2c2E43;
     --color-gris: #595260;
@@ -77,7 +82,15 @@ section[id^=sec_]{
 }
 section[id^=sec_]:nth-child(1){
     background: var(--color-amarillo);
-    box-shadow: 0 4px 8px #ffd72365;
+    box-shadow: 0 4px 8px var(--color-amarillo-shadow);
+}
+section[id^=sec_]:nth-child(2){
+    background: var(--color-violeta);
+    box-shadow: 0 4px 8px var(--color-violeta-shadow);
+}
+section[id^=sec_]:nth-child(3){
+    background: var(--color-cyan);
+    box-shadow: 0 4px 8px var(--color-cyan-shadow);
 }
 
 /* figuras */
@@ -88,23 +101,12 @@ section[id^=sec_]:nth-child(1){
     margin: 0 auto;
     position: relative;
 }
-#triangulo{
-    height: 0px;
-    width: 0px;
-    border-bottom: 150px solid var(--color-gris--claro);
-    border-right: 150px solid transparent;
-    margin: 0 auto;
-    filter: drop-shadow(10px 4px 0px black );
-    position: relative;
-}
-
-#triangulo::before{
-    content: '';
-    height: 140px;
-    width: 4px;
+#triangulo-img + path[Attributes=Style]{
     display: block;
-    background: black;
-    transform: translate(.63rem,10px);
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    fill: red;
 }
 
 #circulo{
@@ -219,13 +221,14 @@ button:hover{
 .figura{
     margin: 1rem 0;
 }
+
+/* cuadrado */
 .cuadradoLado1,.cuadradoLado2,.cuadradoLado3,.cuadradoLado4{
     position: absolute;
     font-weight: 500;
     user-select: none;
     transition: .1s ease-in-out;
 }
-
 .cuadradoLado1{
     bottom: -1.6rem;
     left: 50%;

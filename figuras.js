@@ -94,7 +94,7 @@ function calcularPerimetroCuadrado(lado = inputCuadrado.valueAsNumber){
     (perimetro == 0 || isNaN(perimetro)) ?
     resCuadrado.innerHTML=`Ingresa un dato mayor a 0`
     : 
-    resCuadrado.innerHTML=`El perimetro del cuadado es <strong>${perimetro} cm</strong>`
+    resCuadrado.innerHTML=`El perimetro del cuadado es <strong>${perimetro} ${medidaCuadrado.value}</strong>`
     ;
 }
 function calcularAreaCuadrado(lado = inputCuadrado.valueAsNumber){
@@ -102,7 +102,7 @@ function calcularAreaCuadrado(lado = inputCuadrado.valueAsNumber){
     (area == 0 || isNaN(area)) ?
     resCuadrado.innerHTML=`Ingresa un dato mayor a 0`
     : 
-    resCuadrado.innerHTML=`El área del cuadado es <strong>${area} cm<sup>2</sup></strong>`
+    resCuadrado.innerHTML=`El área del cuadado es <strong>${area} ${medidaCuadrado.value}<sup>2</sup></strong>`
     ;
 }
 
