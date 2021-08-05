@@ -332,6 +332,7 @@ button:hover {
 /* rectangulo */
 /* circulo */
 #circulo {
+  position: relative;
   &::before {
     content: "R";
     display: block;
@@ -345,10 +346,67 @@ button:hover {
     transform: translateY(-50%);
   }
   &::after {
-    content: attr(data-longitud) attr(data-unidad);
+    content: attr(data-longitud) " " attr(data-unidad);
     position: absolute;
     top: 35%;
     right: 15%;
     text-align: left;
+  }
+  .circunferencia {
+    width: 111%;
+    height: 111%;
+    border: 4px dashed var(--color-violeta);
+    position: absolute;
+    bottom: -5.5%;
+    right: -5.5%;
+    border-radius: 100%;
+    transition: 1s ease-in-out;
+    opacity: 0;
+    &::before {
+      content: attr(data-title) " ( " attr(data-longitud) " " attr(data-unidad)
+        " )";
+      color: var(--color-violeta);
+      font-weight: 500;
+      position: absolute;
+      left: 50%;
+      bottom: -1.5rem;
+      transform: translateX(-50%);
+      min-inline-size: max-content;
+    }
+    &.active {
+      opacity: 1;
+    }
+  }
+  .diametro {
+    width: 100%;
+    border: 2px dashed var(--color-violeta);
+    top: 50%;
+    transform: translateY(-50%) rotate(-60deg);
+    position: absolute;
+    transition: 1s ease-in-out;
+    opacity: 0;
+    &::before {
+      content: attr(data-title);
+      color: var(--color-violeta);
+      font-weight: 500;
+      position: absolute;
+      left: 50%;
+      bottom: 1.6rem;
+      transform: translateX(-50%);
+      min-inline-size: max-content;
+    }
+    &::after{
+      content: attr(data-longitud) " " attr(data-unidad);
+      color: var(--color-violeta);
+      font-weight: 500;
+      position: absolute;
+      left: 50%;
+      bottom: 0.4rem;
+      transform: translateX(-50%);
+      min-inline-size: max-content;
+    }
+    &.active {
+      opacity: 1;
+    }
   }
 }

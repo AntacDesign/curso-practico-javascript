@@ -392,6 +392,10 @@ button:hover {
 
 /* rectangulo */
 /* circulo */
+#circulo {
+  position: relative;
+}
+
 #circulo::before {
   content: "R";
   display: block;
@@ -407,10 +411,85 @@ button:hover {
 }
 
 #circulo::after {
-  content: attr(data-longitud) attr(data-unidad);
+  content: attr(data-longitud) " " attr(data-unidad);
   position: absolute;
   top: 35%;
   right: 15%;
   text-align: left;
+}
+
+#circulo .circunferencia {
+  width: 111%;
+  height: 111%;
+  border: 4px dashed var(--color-violeta);
+  position: absolute;
+  bottom: -5.5%;
+  right: -5.5%;
+  border-radius: 100%;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  opacity: 0;
+}
+
+#circulo .circunferencia::before {
+  content: attr(data-title) " ( " attr(data-longitud) " " attr(data-unidad) " )";
+  color: var(--color-violeta);
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  bottom: -1.5rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  min-inline-size: -webkit-max-content;
+  min-inline-size: -moz-max-content;
+  min-inline-size: max-content;
+}
+
+#circulo .circunferencia.active {
+  opacity: 1;
+}
+
+#circulo .diametro {
+  width: 100%;
+  border: 2px dashed var(--color-violeta);
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-60deg);
+          transform: translateY(-50%) rotate(-60deg);
+  position: absolute;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  opacity: 0;
+}
+
+#circulo .diametro::before {
+  content: attr(data-title);
+  color: var(--color-violeta);
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  bottom: 1.6rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  min-inline-size: -webkit-max-content;
+  min-inline-size: -moz-max-content;
+  min-inline-size: max-content;
+}
+
+#circulo .diametro::after {
+  content: attr(data-longitud) " " attr(data-unidad);
+  color: var(--color-violeta);
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  bottom: 0.4rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  min-inline-size: -webkit-max-content;
+  min-inline-size: -moz-max-content;
+  min-inline-size: max-content;
+}
+
+#circulo .diametro.active {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
