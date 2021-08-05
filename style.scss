@@ -46,6 +46,7 @@ h1 {
   font-size: 1.5rem;
   font-weight: 100;
 }
+
 h2 {
   font-weight: 400;
 }
@@ -55,16 +56,19 @@ h2 strong {
   font-weight: 100;
   padding-bottom: 0.4rem;
 }
+
 section[id^="sec_"] h2 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   line-height: 0.6;
 }
+
 h3 {
   font-weight: 500;
 }
 
+/* containers */
 .container {
   display: grid;
   grid-template-columns: 100%;
@@ -167,18 +171,20 @@ select:focus {
   position: relative;
   cursor: pointer;
 }
+
 .select--flotante {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 0.2rem;
 }
+
 .select--flotante--tipo-triangulo {
   position: relative;
   right: 0;
   padding: 0.2rem 0.4rem;
   padding-top: 0.9rem;
-  padding-left: .6rem;
+  padding-left: 0.6rem;
   border-radius: 50px;
   font-size: 16px;
   font-weight: 500;
@@ -191,10 +197,10 @@ select:focus {
   }
 }
 
-.select-tipo-triangulo{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+.select-tipo-triangulo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .label-flotante label {
@@ -220,7 +226,7 @@ select:focus {
   color: white;
   padding: 0;
   padding-top: 0.1rem;
-  padding-left: .9rem;
+  padding-left: 0.9rem;
   font-size: 12px;
   font-weight: 600;
 }
@@ -300,6 +306,7 @@ button:hover {
   font-weight: 500;
   user-select: none;
   transition: 0.1s ease-in-out;
+  min-inline-size: max-content;
 }
 .cuadradoLado1 {
   bottom: -1.6rem;
@@ -320,4 +327,28 @@ button:hover {
   left: -2.5rem;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* rectangulo */
+/* circulo */
+#circulo {
+  &::before {
+    content: "R";
+    display: block;
+    position: absolute;
+    border: 2px dashed var(--color-principal);
+    border-radius: 4px;
+    width: 50%;
+    height: 0px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  &::after {
+    content: attr(data-longitud) attr(data-unidad);
+    position: absolute;
+    top: 35%;
+    right: 15%;
+    text-align: left;
+  }
 }
