@@ -19,12 +19,15 @@
     -->
       <h3>Figuras geométricas</h3>
       <button class="btn-menu">
-        <img src="./imgsFiguras/btn-menu.svg" alt="">
+        <img src="./imgsFiguras/btn-menu.svg" alt="" />
       </button>
     </nav>
     <div class="container container--calculos">
       <section id="sec_cuadrado">
-        <h2><img src="./imgsFiguras/icon-square.svg" alt="icono cuadrado">  Cuadrado</h2>
+        <h2>
+          <img src="./imgsFiguras/icon-square.svg" alt="icono cuadrado" />
+          Cuadrado
+        </h2>
         <div class="figura">
           <div id="cuadrado">
             <div class="cuadradoLado1"></div>
@@ -40,20 +43,16 @@
               <input type="number" min="1" required id="inputCuadrado" />
               <label for="inputCuadrado">Longitud</label>
             </div>
-            <select name="medida" id="medidaCuadrado" class="select select--flotante">
+            <select
+              name="medida"
+              id="medidaCuadrado"
+              class="select select--flotante"
+            >
               <optgroup label="Medida">
-                <option value="mm">
-                  mm
-                </option>
-                <option value="cm">
-                  cm
-                </option>
-                <option value="m">
-                  m
-                </option>
-                <option value="km">
-                  km
-                </option>
+                <option value="mm">mm</option>
+                <option value="cm">cm</option>
+                <option value="m">m</option>
+                <option value="km">km</option>
               </optgroup>
             </select>
           </div>
@@ -63,35 +62,48 @@
               <button type="button" onclick="calcularPerimetroCuadrado()">
                 Perímetro
               </button>
-              <button type="button" onclick="calcularAreaCuadrado()">Área</button>
+              <button type="button" onclick="calcularAreaCuadrado()">
+                Área
+              </button>
             </div>
           </div>
         </form>
         <div id="output--cuadrado"></div>
       </section>
       <section id="sec_triangulo">
-        <h2> <img src="./imgsFiguras/icon-triangle.svg" alt="icono triangulo"> Triangulo</h2>
+        <h2>
+          <img src="./imgsFiguras/icon-triangle.svg" alt="icono triangulo" />
+          Triangulo
+        </h2>
+        <div class="label-flotante select-tipo-triangulo">
+          <select
+            name="tipoTriangle"
+            class="select select--flotante select--flotante--tipo-triangulo"
+            id="tipoTriangle"
+          >
+            <optgroup label="Tipo triangulo">
+              <option value="esca">escaleno</option>
+              <option value="iso">isoseles</option>
+              <option value="equi">equilatero</option>
+              <option value="rec">rectangulo</option>
+            </optgroup>
+          </select>
+          <label for="">Tipo</label>
+        </div>
         <div class="figura">
           <div id="triangulo">
-            <img src="./imgsFiguras/triangle.svg" alt="">
+            <img src="./imgsFiguras/triangle.svg" alt="" />
           </div>
         </div>
         <form class="container container__formulario" action="">
-          <h4>Ingresa los datos del triangulo
+          <h4>
+            Ingresa los datos del triangulo
             <select name="medida" id="medidaTriangulo" class="select">
               <optgroup label="Medida">
-                <option value="mm">
-                  mm
-                </option>
-                <option value="cm">
-                  cm
-                </option>
-                <option value="m">
-                  m
-                </option>
-                <option value="km">
-                  km
-                </option>
+                <option value="mm">mm</option>
+                <option value="cm">cm</option>
+                <option value="m">m</option>
+                <option value="km">km</option>
               </optgroup>
             </select>
           </h4>
@@ -115,7 +127,9 @@
               <button type="button" onclick="calcularPerimetroTriangulo()">
                 Perímetro
               </button>
-              <button type="button" onclick="calcularAreaTriangulo()">Área</button>
+              <button type="button" onclick="calcularAreaTriangulo()">
+                Área
+              </button>
               <button type="button" onclick="calcularAlturaTriangulo()">
                 Altura
               </button>
@@ -125,33 +139,31 @@
         <div id="output--triangulo"></div>
       </section>
       <section id="sec_circulo">
-        <h2><img src="./imgsFiguras/icon-circle.svg" alt="icono circulo">Circulo</h2>
+        <h2>
+          <img src="./imgsFiguras/icon-circle.svg" alt="icono circulo" />Circulo
+        </h2>
         <div class="figura">
           <div id="circulo"></div>
         </div>
         <form class="container container__formulario" action="">
           <h4>Ingresa el radio</h4>
           <div class="group-input">
-          <div class="label-flotante">
-            <input required type="number" min="1" id="inputCirculo" />
-            <label for="inputCirculo"> Radio </label>
-          </div>
-          <select name="medida" id="medidaCirculo" class="select select--flotante">
-            <optgroup label="Medida">
-              <option value="mm">
-                mm
-              </option>
-              <option value="cm">
-                cm
-              </option>
-              <option value="m">
-                m
-              </option>
-              <option value="km">
-                km
-              </option>
-            </optgroup>
-          </select>
+            <div class="label-flotante">
+              <input required type="number" min="1" id="inputCirculo" />
+              <label for="inputCirculo"> Radio </label>
+            </div>
+            <select
+              name="medida"
+              id="medidaCirculo"
+              class="select select--flotante"
+            >
+              <optgroup label="Medida">
+                <option value="mm">mm</option>
+                <option value="cm">cm</option>
+                <option value="m">m</option>
+                <option value="km">km</option>
+              </optgroup>
+            </select>
           </div>
           <div class="container__formulario__sec_operaciones">
             <h3>Calcular</h3>
@@ -162,7 +174,9 @@
               <button type="button" onclick="calcularCircunferenciaCirculo()">
                 Circunferencia
               </button>
-              <button type="button" onclick="calcularAreaCirculo()">Área</button>
+              <button type="button" onclick="calcularAreaCirculo()">
+                Área
+              </button>
             </div>
           </div>
         </form>

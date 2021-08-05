@@ -121,6 +121,7 @@ section[id^="sec_"]:nth-child(1) {
 
 section[id^="sec_"]:nth-child(2) {
   background: var(--color-violeta);
+  position: relative;
   -webkit-box-shadow: 0 4px 8px var(--color-violeta-shadow);
           box-shadow: 0 4px 8px var(--color-violeta-shadow);
 }
@@ -207,6 +208,33 @@ select:focus {
   right: 0.2rem;
 }
 
+.select--flotante--tipo-triangulo {
+  position: relative;
+  right: 0;
+  padding: 0.2rem 0.4rem;
+  padding-top: 0.9rem;
+  padding-left: .6rem;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  color: white;
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  background: var(--color-principal);
+}
+
+.select--flotante--tipo-triangulo:focus {
+  -webkit-box-shadow: 0 0 0 2px #2c2e4380;
+          box-shadow: 0 0 0 2px #2c2e4380;
+}
+
+.select-tipo-triangulo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
 .label-flotante label {
   position: absolute;
   padding: 0.65rem;
@@ -223,6 +251,15 @@ select:focus {
   padding: 0;
   padding-top: 0.2rem;
   padding-left: 0.5rem;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.label-flotante select:valid + label {
+  color: white;
+  padding: 0;
+  padding-top: 0.1rem;
+  padding-left: .9rem;
   font-size: 12px;
   font-weight: 600;
 }
