@@ -75,7 +75,7 @@
           <img src="./imgsFiguras/icon-triangle.svg" alt="icono triangulo" />
           Triangulo
         </h2>
-        <div class="label-flotante select-tipo-triangulo">
+        <div class="label-flotante label-select-tipo-triangulo">
           <select
             name="tipoTriangle"
             class="select select--flotante select--flotante--tipo-triangulo"
@@ -98,15 +98,21 @@
         <form class="container container__formulario" action="">
           <h4>
             Ingresa los datos del triangulo
-            <select name="medida" id="medidaTriangulo" class="select">
-              <optgroup label="Medida">
-                <option value="mm">mm</option>
-                <option value="cm">cm</option>
-                <option value="m">m</option>
-                <option value="km">km</option>
-              </optgroup>
-            </select>
           </h4>
+          <div class="container-triangulo_datos">
+            <h4>Altura</h4>
+            <div class="triangulo_dato-altura">
+              <input type="radio" name="altura" id="altura-true" value="true">
+              <input type="radio" checked name="altura" id="altura-false" value="flase">
+              <label for="altura-true">
+                si
+              </label>
+              <label for="altura-false">
+                no
+              </label>
+              <div class="switch"></div>
+            </div>
+          </div>
           <div class="group-input group-input--triangulo">
             <div class="label-flotante">
               <input required type="number" min="1" id="inputTrianguloLado1" />
@@ -120,6 +126,17 @@
               <input required type="number" min="1" id="inputTrianguloBase" />
               <label for="inputTrianguloBase">Base</label>
             </div>
+          </div>
+          <div class="label-flotante select select--flotante select--flotante--relative">
+            <select name="medida" id="medidaTriangulo" class="select">
+              <optgroup label="Medida">
+                <option value="mm">mm</option>
+                <option value="cm">cm</option>
+                <option value="m">m</option>
+                <option value="km">km</option>
+              </optgroup>
+            </select>
+            <label for="medidaTriangulo"> Medida </label>
           </div>
           <div class="container__formulario__sec_operaciones">
             <h3>Calcular</h3>
@@ -144,7 +161,7 @@
         </h2>
         <div class="figura">
           <div id="circulo" data-longitud="12" data-unidad=" mm">
-            <div class="diametro active" data-title="Diametro" data-longitud="12" data-unidad="mm"></div>
+            <div class="diametro" data-title="Diametro" data-longitud="12" data-unidad="mm"></div>
             <div class="circunferencia" data-title="Circunferencia" data-longitud="12" data-unidad="mm"></div>
           </div>
         </div>
