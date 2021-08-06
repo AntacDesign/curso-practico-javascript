@@ -43,7 +43,7 @@ nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 4;
 }
 
 nav h3 {
@@ -426,12 +426,15 @@ button:hover {
 
 .triangulo_dato-altura {
   margin-top: .5rem;
-  outline: 1px solid red;
-  width: 86px;
+  /* outline: 1px solid red; */
+  width: 84px;
   height: 42px;
+  -webkit-box-shadow: 0px 0px 0px 2px var(--color-principal);
+          box-shadow: 0px 0px 0px 2px var(--color-principal);
   border-radius: 50px;
   background: var(--color-gris);
   position: relative;
+  overflow: hidden;
 }
 
 .triangulo_dato-altura > input[type='radio'] {
@@ -450,8 +453,8 @@ button:hover {
   background: var(--color-gris--claro);
   position: absolute;
   top: 0;
-  -webkit-transform: translateX(105%);
-          transform: translateX(105%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .triangulo_dato-altura > input[id='altura-true']:checked ~ .switch {
@@ -463,23 +466,33 @@ button:hover {
   top: 0;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
+  background: greenyellow;
+  position: relative;
+  z-index: 1;
 }
 
 .triangulo_dato-altura > label {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 50%;
-  -webkit-transform: translateY(-60%);
-          transform: translateY(-60%);
+  -webkit-transform: translateY(-55%);
+          transform: translateY(-55%);
   cursor: pointer;
+  padding: 1rem;
 }
 
 .triangulo_dato-altura label:nth-child(3) {
-  left: 14px;
+  left: 0;
+  padding-left: .9rem;
 }
 
 .triangulo_dato-altura label:nth-child(4) {
-  right: 14px;
+  right: 0;
+  padding-right: .7rem;
+}
+
+.triangulo_dato-altura.active {
+  background: green;
 }
 
 /* circulo */

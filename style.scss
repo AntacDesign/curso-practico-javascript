@@ -34,7 +34,7 @@ nav {
   box-shadow: 0px 0px 4px 1px var(--color-gris--claro);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 4;
   h3 {
     position: absolute;
     left: 50%;
@@ -361,12 +361,14 @@ button:hover {
 }
 .triangulo_dato-altura{
   margin-top: .5rem;
-  outline: 1px solid red;
-  width: 86px;
+  /* outline: 1px solid red; */
+  width: 84px;
   height: 42px;
+  box-shadow: 0px 0px 0px 2px  var(--color-principal);
   border-radius: 50px;
   background: var(--color-gris);
   position: relative;
+  overflow: hidden;
   &>input[type='radio']{
     display: none;
   }
@@ -380,7 +382,7 @@ button:hover {
     background: var(--color-gris--claro);
     position: absolute;
     top: 0;
-    transform: translateX(105%);
+    transform: translateX(100%);
   }
   &> input[id='altura-true']:checked ~ .switch{
     height: 42px;
@@ -390,19 +392,28 @@ button:hover {
     position: absolute;
     top: 0;
     transform: translateX(0%);
+    background: greenyellow;
+    position: relative;
+    z-index: 1;
   }
   &>label{
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 50%;
-    transform: translateY(-60%);
+    transform: translateY(-55%);
     cursor: pointer;
+    padding: 1rem;
   }
   & label:nth-child(3){
-    left: 14px;
+    left: 0;
+    padding-left: .9rem;
   }
   & label:nth-child(4){
-    right: 14px;
+    right: 0;
+    padding-right: .7rem;
+  }
+  &.active{
+    background: green;
   }
 }
 /* circulo */
