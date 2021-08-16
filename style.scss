@@ -170,6 +170,7 @@ select:focus {
   background: white;
   position: relative;
   cursor: pointer;
+  appearance: auto;
 }
 
 .select--flotante {
@@ -190,7 +191,6 @@ select:focus {
   font-weight: 500;
   border: none;
   color: white;
-  transform: rotateY(0);
   background: var(--color-principal);
   &:focus {
     box-shadow: 0 0 0 2px #2c2e4380;
@@ -199,9 +199,9 @@ select:focus {
 
 
 .label-select-tipo-triangulo {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  position: relative;
+  top: 0;
+  right: 0;
 }
 
 .label-flotante label {
@@ -358,6 +358,10 @@ button:hover {
   right: 1rem;
   top:calc(37px + 1.5rem);
 
+}
+.sec_triangulo_title{
+  display: flex;
+  justify-content: space-between;
 }
 .triangulo_dato-altura{
   margin-top: .5rem;
