@@ -108,21 +108,20 @@ function calcularAreaCuadrado(lado = inputCuadrado.valueAsNumber){
 
 //Operaciones del triangulo
 const resTriangulo = document.getElementById('output--triangulo');
-const inputTrianguloLado1 = document.getElementById('inputTrianguloLado1');
-const inputTrianguloLado2 = document.getElementById('inputTrianguloLado2');
-const inputTrianguloBase = document.getElementById('inputTrianguloBase');
+const inputTriangulo1 = document.getElementById('inputTriangulo1');
+const inputTriangulo2 = document.getElementById('inputTriangulo2');
+const inputTriangulo3 = document.getElementById('inputTriangulo3');
+let tipoTriangle = document.getElementById('tipoTriangle');
+
+let sec_triangulo = document.getElementById('sec_triangulo');
 
 
-let trianguloIsoseles = document.getElementById('sec_triangulo');
+tipoTriangle.addEventListener('input',()=>{
+    console.log(tipoTriangle.value);
 
-
-trianguloIsoseles.addEventListener('input',()=>{
-    (inputTrianguloLado1.value == inputTrianguloLado2.value)?
-        console.log('Es isoseles')
-    :'';
 });
 
-function calcularPerimetroTriangulo(lado1 = inputTrianguloLado1.valueAsNumber,lado2 = inputTrianguloLado2.valueAsNumber,base = inputTrianguloBase.valueAsNumber){
+function calcularPerimetroTriangulo(lado1 = inputTriangulo1.valueAsNumber,lado2 = inputTriangulo2.valueAsNumber,base = inputTriangulo3.valueAsNumber){
     const perimetro = perimetroTriangulo(lado1,lado2,base);
     (perimetro == 0 || isNaN(perimetro)) ?
     resTriangulo.innerHTML=`Ingresa un dato mayor a 0`
@@ -130,7 +129,7 @@ function calcularPerimetroTriangulo(lado1 = inputTrianguloLado1.valueAsNumber,la
     resTriangulo.innerHTML=`El perimetro del triangulo es <strong>${perimetro} cm</strong>`
     ;
 }
-function calcularAreaTriangulo(base = inputTrianguloBase.valueAsNumber, altura = inputTrianguloLado1.valueAsNumber){
+function calcularAreaTriangulo(base = inputTriangulo3.valueAsNumber, altura = inputTriangulo1.valueAsNumber){
     const area = areaTriangulo(base,altura);
     (area == 0 || isNaN(area)) ?
     resTriangulo.innerHTML=`Ingresa un dato mayor a 0`
